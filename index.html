@@ -47,14 +47,14 @@
                 var m = Math.floor(r)
                 if(m === 0)
                 {
-                    this.respuesta = 'SI U FUCKING RIGHT'
+                    this.respuesta = '!!!!SI U FUCKING RIGHT¡¡¡¡'
                 }else
                 {
-                    this.respuesta = 'NO U DIED'
+                    this.respuesta = '!!!!NO U DIED¡¡¡¡'
                 }
             }else{
                 this.respuesta = ''
-                this.errorMessage = 'Porfavor introduzca una preguntaaaa!!!'
+                this.errorMessage = 'Porfavor introduzca una preguntaaaa y no sea gei!!!'
             }
             this.pregunta=''
         },
@@ -91,12 +91,14 @@ h1{
     color: rgb(0, 0, 0);
     font-family: "Courier";
     text-align: center;
-    margin: 10vh;
+    margin-top: 0; 
+    margin: 10vh, 0;
     font-weight: 600;
     font-size: 5vh;
 }
 p{
     margin-bottom: 0;
+    text-align: center;
     font-size: 3vh;
     color:rgb(85, 85, 85);
 }
@@ -113,14 +115,14 @@ input{
     border-right: 2px rgb(0, 255, 200) solid;
     margin: 0.5vh;
     font-weight: 500;
-    font-size: 
+    font-size: 2vh;
 }
 
 #titulo{
     color: rgb(0, 0, 0);
-    margin: 6vh;
+    margin: 0.5vh;
     font-weight: 700;
-    font-size: 7vh;
+    font-size: 18vh;
 }
 
 .error-message{
@@ -133,7 +135,6 @@ button{
     justify-content: center;
     align-items: center;
     margin-top: 2vh;
-    margin-bottom: 0.01vh; 
     background:transparent;
     border: 5px rgba(78, 78, 78, 0.438) solid;
     border-bottom: 10px rgb(0, 0, 0) solid;
@@ -143,14 +144,17 @@ button{
 }
 
 .respuesta{
+    font-family: "Courier";
     margin: 0.01vh;
-    font-size: 10vh;
-    color:rgb(255, 230, 0); 
+    text-align: center;
+    font-size: 12vh;
+    color:rgb(255, 0, 0); 
 }
 
 #preguntax{
     color: rgb(0, 0, 0);
     font-weight: 700;
+    text-align: center;
     font-family: "Courier";
 }
 </style>
