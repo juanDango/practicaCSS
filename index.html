@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- BootStrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <!-- Vue -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+  <title>Predictor de tu futuro</title>
+</head>
+
+<body>
+  <div id="app">
+    <div class="app-container">
+        <h1 id="titulo">EL PREDICTOR</h1>
+      <h1>Este predictor responde preguntas de tipo si o no</h1>
+      <p>¿Cual es tu pregunta?</p>
+      <input v-model="pregunta">
+      <p id="preguntax">{{pregunta_Actual}}</p>
+      <span v-if='errorMessage' class="error-message">{{errorMessage}}</span>
+      <button v-on:click="preguntar(pregunta)">REALIZAR PREGUNTA</button>
+      <span v-if='respuesta' class="respuesta">{{respuesta}}</span>
+
+    </div>
+  </div>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        pregunta: '',
+        pregunta_Actual:'',
+        errorMessage: '',
+        respuesta: ''
+      },
+      methods: {
+        preguntar: function(pregunta)
+        {
+            this.pregunta_Actual=pregunta;
+            this.errorMessage = ''
+            if(pregunta.trim())
+            {
+                var r = Math.random()*2
+                var m = Math.floor(r)
+                if(m === 0)
+                {
+                    this.respuesta = 'SI U FUCKING RIGHT'
+                }else
+                {
+                    this.respuesta = 'NO U DIED'
+                }
+            }else{
+                this.respuesta = ''
+                this.errorMessage = 'Porfavor introduzca una preguntaaaa!!!'
+            }
+            this.pregunta=''
+        },
+      }
+    })
+  </script>
+</body>
+
+<style>
+
+html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: linear-gradient(45deg, #808080, rgb(255, 255, 255))
+}
+html body .app-container{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+  user-select: none;
+  color: white;
+}
+h1{
+    color: rgb(0, 0, 0);
+    font-family: "Courier";
+    text-align: center;
+    margin: 10vh;
+    font-weight: 600;
+    font-size: 5vh;
+}
+p{
+    margin-bottom: 0;
+    font-size: 3vh;
+    color:rgb(85, 85, 85);
+}
+input{
+    height: 30px;
+    border: 0;
+    text-align: center;
+    font-family: "Courier";
+    color: white;
+    width: 300px;
+    background:transparent;
+    border-radius: 5px;
+    border-bottom: 2px rgb(0, 255, 200) solid;
+    border-right: 2px rgb(0, 255, 200) solid;
+    margin: 0.5vh;
+    font-weight: 500;
+    font-size: 
+}
+
+#titulo{
+    color: rgb(0, 0, 0);
+    margin: 6vh;
+    font-weight: 700;
+    font-size: 7vh;
+}
+
+.error-message{
+    color:red;
+    font-size: 2vh;
+    font-weight: 700;
+}
+
+button{
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+    margin-bottom: 0.01vh; 
+    background:transparent;
+    border: 5px rgba(78, 78, 78, 0.438) solid;
+    border-bottom: 10px rgb(0, 0, 0) solid;
+    border-right: 10px rgb(0, 0, 0) solid;
+    font-family: "Courier";
+    border-radius: 5px;
+}
+
+.respuesta{
+    margin: 0.01vh;
+    font-size: 10vh;
+    color:rgb(255, 230, 0); 
+}
+
+#preguntax{
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    font-family: "Courier";
+}
+</style>
+
+</html>
